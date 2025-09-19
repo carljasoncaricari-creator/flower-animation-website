@@ -1,25 +1,18 @@
-const animationScreen = document.getElementById("animation-screen");
-const noteScreen = document.getElementById("note-screen");
-const proceedBtn = document.getElementById("proceed-btn");
+// Wait for the page to load
+window.onload = function () {
+  const animationContainer = document.getElementById("animation-container");
+  const proceedBtn = document.getElementById("proceed-btn");
+  const note = document.getElementById("note");
 
-// Generate floating flowers
-for (let i = 0; i < 20; i++) {
-  let flower = document.createElement("div");
-  flower.classList.add("flower");
-  flower.style.left = Math.random() * 100 + "vw";
-  flower.style.animationDuration = 4 + Math.random() * 3 + "s";
-  flower.style.animationDelay = Math.random() * 5 + "s";
-  animationScreen.appendChild(flower);
-}
+  // Step 1: Show animation for 3 seconds
+  setTimeout(() => {
+    proceedBtn.style.display = "block"; // show button
+  }, 3000); // 3000 ms = 3 seconds
 
-// Show proceed button after 6 seconds
-setTimeout(() => {
-  proceedBtn.style.opacity = "1";
-  proceedBtn.style.pointerEvents = "auto";
-}, 6000);
-
-// Switch to note screen
-proceedBtn.addEventListener("click", () => {
-  animationScreen.style.display = "none";
-  noteScreen.style.display = "flex";
-});
+  // Step 2: When button is clicked, show note
+  proceedBtn.addEventListener("click", () => {
+    animationContainer.style.display = "none"; // hide animation
+    proceedBtn.style.display = "none"; // hide button
+    note.style.display = "block"; // show note
+  });
+};
