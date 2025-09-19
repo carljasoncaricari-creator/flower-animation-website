@@ -77,16 +77,26 @@ body, html {
 
 /* Paper note */
 .note {
-  background: #fff;
+  background: repeating-linear-gradient(
+    white,
+    white 28px,
+    #cdd2d4 29px
+  );
+  border-left: 8px solid #ff4d88;
   padding: 40px;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3), 
-              0 0 40px rgba(255,255,255,0.05) inset;
   max-width: 600px;
-  text-align: center;
-  line-height: 1.6;
+  text-align: left;
+  line-height: 1.8;
   animation: fadeIn 1.5s ease;
-}
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3),
+              0 0 40px rgba(255,255,255,0.05) inset;
+
+  /* Handwritten style */
+  font-family: 'Indie Flower', cursive;
+  font-size: 20px;
+  color: #333;
+  }
 
 .note h1 {
   margin-top: 0;
