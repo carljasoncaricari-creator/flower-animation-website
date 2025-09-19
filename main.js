@@ -1,18 +1,16 @@
-// Wait for the page to load
 window.onload = function () {
-  const animationContainer = document.getElementById("animation-container");
+  const animationScreen = document.getElementById("animation-screen");
   const proceedBtn = document.getElementById("proceed-btn");
-  const note = document.getElementById("note");
+  const noteScreen = document.getElementById("note-screen");
 
-  // Step 1: Show animation for 3 seconds
+  // Show flowers first
   setTimeout(() => {
-    proceedBtn.style.display = "block"; // show button
-  }, 5000); // 3000 ms = 3 seconds
+    proceedBtn.style.display = "block"; // show button after 3s
+  }, 3000);
 
-  // Step 2: When button is clicked, show note
+  // When Proceed is clicked → show note
   proceedBtn.addEventListener("click", () => {
-    animationContainer.style.display = "none"; // hide animation
-    proceedBtn.style.display = "none"; // hide button
-    note.style.display = "block"; // show note
+    animationScreen.style.display = "none";
+    noteScreen.style.display = "block";
   });
 };
