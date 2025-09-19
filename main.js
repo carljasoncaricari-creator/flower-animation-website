@@ -7,7 +7,7 @@ window.onload = function () {
   // Step 1: Show animation for 3 seconds
   setTimeout(() => {
     proceedBtn.style.display = "block"; // show button
-  }, 3000); // 3000 ms = 3 seconds
+  }, 5000); // 3000 ms = 3 seconds
 
   // Step 2: When button is clicked, show note
   proceedBtn.addEventListener("click", () => {
