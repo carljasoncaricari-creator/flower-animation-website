@@ -1,34 +1,7 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #111;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden;
-}
-
-#animation-container {
+#animation-screen {
   text-align: center;
-}
-
-.flower {
-  font-size: 4rem;
-  animation: bloom 1s infinite alternate;
-}
-
-@keyframes bloom {
-  from {
-    transform: scale(1);
-    opacity: 0.6;
-  }
-  to {
-    transform: scale(1.4);
-    opacity: 1;
-  }
+  position: relative;
+  z-index: 1;
 }
 
 #proceed-btn {
@@ -40,29 +13,6 @@ body {
   color: white;
   border-radius: 8px;
   cursor: pointer;
-}
-
-#note {
-  display: none;
-  padding: 20px;
-}
-
-.paper-note {
-  background: repeating-linear-gradient(
-    white,
-    white 28px,
-    #cdd2d4 29px
-  );
-  border-left: 8px solid #ff4d88;
-  padding: 40px;
-  border-radius: 12px;
-  max-width: 600px;
-  text-align: left;
-  line-height: 1.8;
-  font-family: 'Indie Flower', cursive;
-  font-size: 20px;
-  color: #333;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3),
-              0 0 40px rgba(255,255,255,0.05) inset;
   position: relative;
+  z-index: 2; /* ensures button stays on top */
 }
