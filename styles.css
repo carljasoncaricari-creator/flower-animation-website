@@ -1,82 +1,53 @@
-/* General resets */
-body, html {
+body {
   margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: 'Georgia', serif;
-  overflow: hidden;
-}
-
-/* First screen */
-#animation-screen {
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  background: linear-gradient(to bottom, #ffe6f0, #fff);
-  position: relative;
+  height: 100vh;
   overflow: hidden;
 }
 
-/* Flower animation */
-.flower {
-  width: 20px;
-  height: 20px;
-  background: pink;
-  border-radius: 50%;
-  position: absolute;
-  animation: float 5s linear infinite;
-  opacity: 0.8;
+#animation-container {
+  text-align: center;
 }
 
-@keyframes float {
-  0% {
-    transform: translateY(100vh) scale(0.5);
-    opacity: 0;
+.flower {
+  font-size: 4rem;
+  animation: bloom 1s infinite alternate;
+}
+
+@keyframes bloom {
+  from {
+    transform: scale(1);
+    opacity: 0.6;
   }
-  50% {
+  to {
+    transform: scale(1.4);
     opacity: 1;
   }
-  100% {
-    transform: translateY(-10vh) scale(1.2);
-    opacity: 0;
-  }
 }
 
-/* Proceed button */
 #proceed-btn {
   margin-top: 20px;
-  padding: 12px 24px;
-  font-size: 18px;
-  background: #ff6699;
+  padding: 10px 20px;
+  font-size: 1.2rem;
   border: none;
+  background: #ff66a3;
   color: white;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 1s ease;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-#proceed-btn:hover {
-  background: #ff4d88;
 }
 
-/* Second screen */
-#note-screen {
+#note {
   display: none;
-  height: 100%;
-  background: #111;
-  color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 20px;
 }
 
-/* Paper note */
-.note {
+.paper-note {
   background: repeating-linear-gradient(
     white,
     white 28px,
@@ -88,28 +59,10 @@ body, html {
   max-width: 600px;
   text-align: left;
   line-height: 1.8;
-  animation: fadeIn 1.5s ease;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3),
-              0 0 40px rgba(255,255,255,0.05) inset;
-
-  /* Handwritten style */
   font-family: 'Indie Flower', cursive;
   font-size: 20px;
   color: #333;
-  }
-
-.note h1 {
-  margin-top: 0;
-  font-size: 28px;
-  color: #222;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3),
+              0 0 40px rgba(255,255,255,0.05) inset;
+  position: relative;
 }
-
-.note p {
-  font-size: 18px;
-  color: #555;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-  }
